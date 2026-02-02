@@ -138,7 +138,7 @@ Runnable demos are in the `demos/` folder. From the repo root, build the library
 | [svelte](demos/svelte) | Vite + Svelte | `cd demos/svelte && npm install && npm run dev` |
 | [angular](demos/angular) | Angular CLI | `cd demos/angular && npm install && npm run dev` |
 
-For more examples and live previews, run Storybook locally: `npm run storybook`. If GitHub Pages is enabled for this repo, the built Storybook is published at `https://<user>.github.io/universal-scrollbar/`.
+For more examples and live previews, run Storybook locally: `npm run storybook`. The built Storybook is published at **https://marciocamello.github.io/universal-scroll-js/**.
 
 ## Configuration
 
