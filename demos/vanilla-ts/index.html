@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Universal Scrollbar - TypeScript Vanilla</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 20px; }
+    .scroll-area { max-height: 300px; overflow: auto; padding: 12px; border: 1px solid #eee; border-radius: 8px; }
+    .scroll-area p { margin: 0 0 8px; }
+  </style>
+</head>
+<body>
+  <h1>TypeScript Vanilla demo</h1>
+  <p>Vite + TypeScript, no framework. Custom scrollbar on a single container.</p>
+  <div class="scroll-area" id="scrollContainer">
+    <!-- Content filled by main.ts -->
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Demos: build and cache
+demos/*/dist/
+demos/*/out-tsc/
+demos/*/.angular/
+demos/*/node_modules/
+
+# Logs and temp
+*.log
+npm-debug.log*
+.npm
+.cache/
+*.tmp
+*.temp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE (optional: remove .vscode if you commit shared settings)
+.idea/
+*.swp
+*.swo
+*~
+
+# Env
+.env
+.env.local
+.env.*.local

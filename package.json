@@ -1,0 +1,80 @@
+{
+  "name": "universal-scrollbar",
+  "version": "1.0.0",
+  "description": "Framework-agnostic custom scrollbar plugin. Works with React, Vue, Angular, Svelte, Vanilla JS and any other framework.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.global.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "scrollbar",
+    "custom-scrollbar",
+    "framework-agnostic",
+    "react",
+    "vue",
+    "angular",
+    "svelte",
+    "vanilla-js",
+    "ui",
+    "cross-browser",
+    "typescript",
+    "javascript",
+    "scroll",
+    "scrolling"
+  ],
+  "author": "marciocamello",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marciocamello/universal-scrollbar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marciocamello/universal-scrollbar/issues"
+  },
+  "homepage": "https://github.com/marciocamello/universal-scrollbar#readme",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/html": "^8.0.0",
+    "@storybook/html-vite": "^8.0.0",
+    "@storybook/test": "^8.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "happy-dom": "^15.0.0",
+    "storybook": "^8.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^2.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

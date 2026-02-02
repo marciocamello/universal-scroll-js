@@ -1,0 +1,11 @@
+<h1>Angular demo</h1>
+<p>Custom scrollbar via ViewChild and AfterViewInit.</p>
+<div
+  #scrollRef
+  class="scroll-area"
+  style="max-height: 300px; overflow: auto; padding: 12px; border: 1px solid #eee; border-radius: 8px;"
+>
+  @for (i of lines; track i) {
+    <p>Line {{ i }}</p>
+  }
+</div>
