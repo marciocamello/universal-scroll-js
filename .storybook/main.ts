@@ -3,12 +3,8 @@ import type { StorybookConfig } from '@storybook/html-vite';
 const base = process.env.BASE_PATH || '/';
 
 const config: StorybookConfig = {
-  stories: ['../stories/**/*.mdx', '../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-  ],
+  stories: ['../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  addons: ['@storybook/addon-links', '@storybook/addon-docs', '@storybook/addon-vitest'],
   framework: {
     name: '@storybook/html-vite',
     options: {},

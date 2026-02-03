@@ -1,6 +1,6 @@
 {
   "name": "universal-scrollbar",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Framework-agnostic custom scrollbar plugin. Works with React, Vue, Angular, Svelte, Vanilla JS and any other framework.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -28,6 +28,7 @@
     "dev": "tsup --watch",
     "test": "vitest",
     "test:run": "vitest run",
+    "test-storybook": "vitest run -c vitest.storybook.config.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepublishOnly": "npm run build"
@@ -59,15 +60,15 @@
   },
   "homepage": "https://github.com/marciocamello/universal-scrollbar#readme",
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.0.0",
-    "@storybook/addon-interactions": "^8.0.0",
-    "@storybook/addon-links": "^8.0.0",
-    "@storybook/html": "^8.0.0",
-    "@storybook/html-vite": "^8.0.0",
-    "@storybook/test": "^8.0.0",
+    "@storybook/addon-docs": "^10.2.4",
+    "@storybook/addon-links": "^10.2.4",
+    "@storybook/addon-vitest": "^10.2.4",
+    "@storybook/html": "^10.2.4",
+    "@storybook/html-vite": "^10.2.4",
+    "@storybook/test": "^10.2.4",
     "@vitest/coverage-v8": "^2.0.0",
     "happy-dom": "^15.0.0",
-    "storybook": "^8.0.0",
+    "storybook": "^10.2.4",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
     "vitest": "^2.0.0"

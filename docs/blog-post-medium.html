@@ -1,0 +1,80 @@
+<!-- Paste this into Medium: use the "..." menu > "Paste as plain text" or paste into the editor; then select all and use "Format" if needed. Or paste section by section. -->
+<h1>One Custom Scrollbar for Every Browser (Without Fake Scroll)</h1>
+
+<p>Native scrollbars look different in Chrome, Firefox, Safari, and Edge. Styling them is limited and inconsistent. Many "custom scrollbar" solutions replace scrolling entirely with JavaScript and fake divs—breaking native behavior like wheel, touch, and keyboard. <strong>Universal Scrollbar</strong> takes a different approach: it keeps the real scroll and only replaces the <strong>visual</strong> bar, so you get one consistent look across browsers without losing native behavior.</p>
+
+<h2>What It Does</h2>
+
+<ul>
+<li><strong>Visual overlay only.</strong> Hides the native scrollbar with CSS and draws a custom track and thumb. The element still has <code>overflow: auto</code>; scrolling is 100% native.</li>
+<li><strong>One code path.</strong> Same logic everywhere: same look and interaction in Safari, Chrome, Firefox, and Edge.</li>
+<li><strong>Framework-agnostic.</strong> No React/Vue/Angular lock-in. Use it in vanilla JS, or wire it in any framework with a ref and lifecycle (mount/destroy).</li>
+<li><strong>Apply everywhere or per element.</strong> With no <code>target</code> option, a single <code>new UniversalScrollbar()</code> finds all scrollable elements on the page and applies the custom bar. Or pass a selector or element to limit scope.</li>
+<li><strong>Optional auto-hide.</strong> Scrollbar can fade when not hovering, with configurable delay and colors.</li>
+</ul>
+
+<h2>Install</h2>
+
+<pre><code>npm install universal-scrollbar</code></pre>
+
+<p>Or drop in the script for a quick try:</p>
+
+<pre><code>&lt;script src="https://unpkg.com/universal-scrollbar@latest/dist/index.global.js"&gt;&lt;/script&gt;</code></pre>
+
+<h2>Quick Start</h2>
+
+<pre><code>&lt;div class="content" style="max-height: 300px; overflow: auto;"&gt;
+  &lt;!-- Your content --&gt;
+&lt;/div&gt;
+&lt;script&gt;
+  const scrollbar = new UniversalScrollbar();
+&lt;/script&gt;</code></pre>
+
+<p>With no options, the library discovers every element with <code>overflow: auto</code> or <code>overflow: scroll</code> and applies the custom scrollbar. One call, whole page. To target a specific container, pass <code>target</code> (selector or <code>HTMLElement</code>).</p>
+
+<h2>Use in Any Framework</h2>
+
+<p>Because it's just a class and a DOM element, you use your framework's ref and lifecycle:</p>
+
+<ul>
+<li><strong>React:</strong> <code>useRef</code> + <code>useEffect</code> (create on mount, <code>destroy()</code> on cleanup).</li>
+<li><strong>Vue:</strong> ref + <code>onMounted</code> / <code>onUnmounted</code>.</li>
+<li><strong>Svelte:</strong> <code>bind:this</code> + <code>onMount</code> / <code>onDestroy</code>.</li>
+<li><strong>Angular:</strong> <code>ViewChild</code> + <code>AfterViewInit</code> / <code>OnDestroy</code>.</li>
+</ul>
+
+<p>Same API everywhere: <code>new UniversalScrollbar({ target: el, ...options })</code> and <code>instance.destroy()</code> when the component unmounts.</p>
+
+<h2>See It in Action</h2>
+
+<ul>
+<li><strong>Storybook (live):</strong> <a href="https://marciocamello.github.io/universal-scrollbar/">marciocamello.github.io/universal-scrollbar</a> — themes, options, and demos.</li>
+<li><strong>Demos:</strong> Vanilla, TypeScript vanilla, React, Vue, Svelte, and Angular in the <a href="https://github.com/marciocamello/universal-scrollbar">GitHub repo</a> under <code>demos/</code>.</li>
+<li><strong>npm:</strong> <a href="https://www.npmjs.com/package/universal-scrollbar">npmjs.com/package/universal-scrollbar</a></li>
+</ul>
+
+<h2>Why Not "Fake" Scroll?</h2>
+
+<p>Libraries that hide overflow and scroll content with JS can break:</p>
+
+<ul>
+<li>Mouse wheel and trackpad</li>
+<li>Touch scrolling</li>
+<li>Keyboard (arrows, Page Up/Down)</li>
+<li>Focus and accessibility</li>
+<li>Performance on long lists</li>
+</ul>
+
+<p>Universal Scrollbar only replaces the <strong>look</strong> of the scrollbar. The actual scrolling is still the browser's. You get a consistent UI without giving up native behavior.</p>
+
+<h2>Summary</h2>
+
+<p>If you need one custom scrollbar look across all major browsers and want to keep native scroll behavior, Universal Scrollbar is a small, dependency-free option that works with any stack. MIT licensed, TypeScript, and documented with Storybook and framework demos.</p>
+
+<p><strong>Links</strong></p>
+
+<ul>
+<li>GitHub: <a href="https://github.com/marciocamello/universal-scrollbar">github.com/marciocamello/universal-scrollbar</a></li>
+<li>npm: <a href="https://www.npmjs.com/package/universal-scrollbar">npmjs.com/package/universal-scrollbar</a></li>
+<li>Live Storybook: <a href="https://marciocamello.github.io/universal-scrollbar/">marciocamello.github.io/universal-scrollbar</a></li>
+</ul>

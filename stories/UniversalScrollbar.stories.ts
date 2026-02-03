@@ -1,9 +1,10 @@
-import type { Meta, StoryObj } from '@storybook/html';
+import type { Meta, StoryObj } from '@storybook/html-vite';
+import { expect } from '@storybook/test';
 import UniversalScrollbar from '../src/index';
 
 const meta: Meta = {
   title: 'UniversalScrollbar',
-  tags: ['autodocs'],
+  tags: ['autodocs', 'test'],
 };
 
 export default meta;
@@ -34,6 +35,12 @@ export const Default: Story = {
     const el = wrapper.querySelector('.scroll-demo') as HTMLElement;
     if (el) initScrollbarAfterLayout(el, { autoHide: false, trackColor: 'rgba(0,0,0,0.08)', thumbColor: '#667eea' });
     return wrapper;
+  },
+  play: async ({ canvasElement }) => {
+    const scrollDemo = canvasElement.querySelector('.scroll-demo') ?? canvasElement;
+    await expect(scrollDemo).toBeInTheDocument();
+    const firstParagraph = scrollDemo.querySelector('p');
+    await expect(firstParagraph).toBeInTheDocument();
   },
 };
 
