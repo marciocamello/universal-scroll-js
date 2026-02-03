@@ -1,8 +1,10 @@
+# Deploy Storybook to GitHub Pages.
+# Roda em todo push (para aparecer em Actions); publica só em main/master.
+# Em Settings > Pages do repositório, defina Source = "GitHub Actions".
 name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -25,7 +27,7 @@ jobs:
           node-version: 20
           cache: npm
 
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
 
       - run: npm run build
 
@@ -39,6 +41,7 @@ jobs:
 
   deploy:
     needs: build
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
