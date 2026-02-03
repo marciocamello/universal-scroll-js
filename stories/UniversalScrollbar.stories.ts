@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/html-vite';
-import { expect } from '@storybook/test';
+import { expect } from 'storybook/test';
 import UniversalScrollbar from '../src/index';
 
 const meta: Meta = {

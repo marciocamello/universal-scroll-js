@@ -1,6 +1,6 @@
 {
   "name": "universal-scrollbar",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Framework-agnostic custom scrollbar plugin. Works with React, Vue, Angular, Svelte, Vanilla JS and any other framework.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -65,13 +65,12 @@
     "@storybook/addon-vitest": "^10.2.4",
     "@storybook/html": "^10.2.4",
     "@storybook/html-vite": "^10.2.4",
-    "@storybook/test": "^10.2.4",
-    "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
     "happy-dom": "^15.0.0",
     "storybook": "^10.2.4",
     "tsup": "^8.0.0",
     "typescript": "^5.0.0",
-    "vitest": "^2.0.0"
+    "vitest": "^3.0.0"
   },
   "browserslist": [
     "> 1%",
